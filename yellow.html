@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Web demo</title>
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<style>		
+		.section{
+			text-align: center;
+			background-size: cover;
+			color: #808080;
+		}
+	
+		.black {
+			background-color: black;
+		}
+		
+		.splash {
+			background-image: url("img/yellow.jpg");
+		}
+	</style>
+
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scrolloverflow.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				scrollingSpeed: 0,
+				touchSensitivity: 50
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section black" id="onstage"></div>
+	<div class="section splash" id="splash1"></div>
+	<div class="section black" id="offstage"></div>
+</div>
+
+</body>
+</html>
