@@ -1,0 +1,29 @@
+/* COLOR STYLES */
+.section{
+	background-size: cover;
+}
+
+
+.black {
+	background-color: black;
+}
+
+.green {
+	background-image: url("../img/green.jpg");	
+}
+
+.red {
+	background-image: url("../img/red.jpg");	
+}
+
+.yellow {
+	background-image: url("../img/yellow.jpg");	
+}
+
+
+/* WEBCAM */
+.webcam video {
+	transform: scaleX(-1); // flip video
+	min-width: 100%;
+	min-height: 100%;
+}
