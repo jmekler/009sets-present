@@ -4,6 +4,7 @@ if ($('.webcam').length) {
 	let video = $video.get(0);
 	$('.webcam').append($video);
 	
+	// check to make sure browser is accepted
 	if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
 		console.log("enumerateDevices() not supported.");
 	}
@@ -19,7 +20,7 @@ if ($('.webcam').length) {
 			let constraints = {
 			    audio: false,
 			    video: {
-				    deviceId: cameras[1].deviceId,
+				    deviceId: cameras[cameras.length-1].deviceId,
 			        width: { min: 1280, ideal: 1920 },
 			        height: { min: 720, ideal: 1080 },
 			    }
@@ -34,7 +35,8 @@ if ($('.webcam').length) {
 					stream.onended = function() { console.log('Stream ended'); };
 					window.stream = stream; // make variable available to console
 					video.srcObject = stream;
-				})
-				.catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+				}, function(err) { 
+					console.log(err.name + ": " + err.message);  // always check for errors at the end.
+				});
 		});	
 }
