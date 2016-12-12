@@ -24,13 +24,11 @@ if ($('.webcam').length) {
 			        width: { min: 1280, ideal: 1920 },
 			        height: { min: 720, ideal: 1080 },
 			    }
-			};
-			
+			};			
 			navigator.mediaDevices.getUserMedia(constraints)
 				.then(function(stream) {
 					let videoTracks = stream.getVideoTracks();
 					console.log(videoTracks);
-// 					let video = $('.webcam').children('video').get(0);
 					console.log('Using video device: ' + videoTracks[0].label);
 					stream.onended = function() { console.log('Stream ended'); };
 					window.stream = stream; // make variable available to console
